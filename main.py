@@ -137,46 +137,54 @@ while running:
             if evt.key == K_i:
                 moveInGrid("up", 4, 8, 2)
                           
-                          
-                          
-                          
-                          
-                            
-        
-                
-                     
-            
-        
-        
-        
-        
-    
                     
     
     screen.fill(BLACK)
+    #Left Grid 
     for i in range(9):
         draw.line(screen, GREEN, (360, i*70+70), (640, i*70+70), 2)
     for i in range(5):
         draw.line(screen, GREEN, (i*70+360, 70), (i*70+360, 630), 2)
+
+    #Right Grid
     for i in range(9):
         draw.line(screen, GREEN, (745, i*70+70), (1025, i*70+70), 2)
     for i in range(5):
         draw.line(screen, GREEN, (i*70+745, 70), (i*70+745, 630), 2)
     
+    #Blue player
     for i in range(8):
         for j in range(4):
             if grid1[i][j] == 1:
                 # print(i, j)
                 draw.rect(screen, BLUE, (j*70+360, i*70+70, 70, 70))
-               
+
+    #Red Player       
     for i in range(8):
         for j in range(4):
             if grid2[i][j] == 1:
                 # print(i, j)
                 draw.rect(screen, RED, (j*70+745, i*70+70, 70, 70)) 
                     
-    
-                       
+    #Blue cards area
+    draw.rect(screen,BLUE,(0,147,183,406),2)
+    draw.line(screen,WHITE,(40,150),(40,550))
+    for i in range(10):
+        draw.rect(screen,WHITE,(0,150,40,i*40+40),2)
+    for i in range(4):
+        draw.rect(screen,WHITE,(40,150,140,i*100+100),2)
+
+    #Red cards area
+    draw.rect(screen,RED,(1217,147,183,406),2)
+    draw.line(screen,WHITE,(1360,150),(1360,550))
+    for i in range(10):
+        draw.rect(screen,WHITE,(1360,150,1360,i*40+40),2)
+    for i in range(4):
+        draw.rect(screen,WHITE,(1220,150,140,i*100+100),2)
+
+
+
+
     mx,my=mouse.get_pos()
     mb=mouse.get_pressed()
       
